@@ -3,8 +3,8 @@
 -->
 
 <svelte:head>
-	<title>Resume Toaster</title>
-	<meta name="description" content="Resume Toaster" />
+	<title>AI Resume Toaster</title>
+	<meta name="description" content="AI Resume Toaster" />
 </svelte:head>
 
 <script lang="ts">
@@ -482,7 +482,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 <div class="page">
   <div class="title">
-    <h1 style="font-size:120px; color:white;">Resume</h1>
+    <h1 style="font-size:120px; color:white;">AI Resume</h1>
     <h1 style="font-size:120px; color:red;">Toaster</h1>
   </div>
 
