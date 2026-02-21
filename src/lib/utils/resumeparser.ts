@@ -1,21 +1,25 @@
-import * as pdfjsLib from 'pdfjs-dist';
+import { browser } from '$app/environment';
 
-async function pdfToText(file: File): Promise<string> {
-  const arrayBuffer = await file.arrayBuffer();
+export async function pdfToText(file: File): Promise<string> {
+  if (!browser) return '';
+
+  // IMPORTANT: dynamic import so SSR never evaluates pdfjs
+  const pdfjsLib = await import('pdfjs-dist');
+
+  // Worker setup (do it after import, in browser)
   pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/build/pdf.worker.min.mjs',
     import.meta.url
   ).toString();
 
+  const arrayBuffer = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
 
   let fullText = '';
   for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
     const page = await pdf.getPage(pageNum);
     const content = await page.getTextContent();
-    const pageText = content.items
-      .map((item: any) => item.str)
-      .join(' ');
+    const pageText = content.items.map((item: any) => item.str).join(' ');
     fullText += pageText + '\n';
   }
 
