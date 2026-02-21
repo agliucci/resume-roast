@@ -30,6 +30,7 @@ function extractBullets(resumeText: string): string[] {
 
 type Tone = 'friendly' | 'professional' | 'savage' | 'sarcastic';
 
+
 interface RoastRequest {
   resumeText: string;
   tone: Tone;
@@ -80,6 +81,8 @@ Rules:
 - roast only the resume content not the person 
 - no hate speech or profanity
 - Give specific feedback on how to improve the resume for each section (experience, education, skills, etc)
+- The output should be for each section followed by bullet points of roasts for that section and then the suggestions for improvement.
+- For each section give a heading and make sure the heading is bold so its easier to read.
             
 Resume: ${resumeText}`;
 
@@ -91,6 +94,7 @@ Resume: ${resumeText}`;
     const roast = getGeminiText(response);
 
     return json({ bullets, roast });
+    
   } catch (error) {
     console.error('Error generating roast:', error);
     return json(
