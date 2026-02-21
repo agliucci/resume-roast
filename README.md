@@ -1,42 +1,8 @@
-# sv
+# <img width="25" height="25" alt="toasster" src="https://github.com/user-attachments/assets/6b668d96-ccc1-4e8c-972f-6df3e5c091b3" /> AI Resume Toaster
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Creating a project
+Upload your resume. We'll judge it. Then we'll fix it.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## How to use
 
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv create --template demo --types ts --install npm my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Go to https://airesumetoaster.vercel.app then upload your resume as a pdf. Then wait for the roasts. 
