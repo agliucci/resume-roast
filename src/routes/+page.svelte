@@ -1,3 +1,8 @@
+<!-- 
+  "/" landing page, title, desc, upload button
+-->
+
+
 <script lang="ts">
 	import welcomeFallback from '$lib/images/svelte-welcome.png';
 	import welcome from '$lib/images/svelte-welcome.webp';
