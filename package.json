@@ -23,6 +23,7 @@
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
-		"@google/genai": "^1.42.0"
+		"@google/genai": "^1.42.0",
+		"pdfjs-dist": "^5.4.624"
 	}
 }
